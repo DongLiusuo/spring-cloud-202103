@@ -1,7 +1,7 @@
 spring:
   application:
-    name: a030-cloud-eureka-server-7001
+    name: a040-cloud-eureka-server-7002
   profiles:
     active: manyEureka
 server:
-  port: 7001
+  port: 7002
