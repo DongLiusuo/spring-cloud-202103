@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @RequestMapping("payment")
 public class PatmentController {
-
     @Value("${server.port}")
     private String port;
 

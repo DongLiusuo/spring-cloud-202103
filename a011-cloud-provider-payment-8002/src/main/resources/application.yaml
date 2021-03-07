@@ -4,4 +4,4 @@ spring:
   profiles:
     active: manyEureka
 server:
-  port: 8001
+  port: 8002
