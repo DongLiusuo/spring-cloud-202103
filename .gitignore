@@ -1,0 +1,20 @@
+!.gitignore
+
+# ===eclipse
+.project
+.classpath
+.settings/
+*/target/
+
+# Intellij
+.idea
+*.iml
+*/*.iml
+
+category.yaml
+zz-toc.yaml
+.DS_Store
+Thumbs.db
+.swp
+**/dbjson
+index.builder.json
