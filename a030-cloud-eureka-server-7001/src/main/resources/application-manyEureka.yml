@@ -2,6 +2,9 @@ eureka:
   instance:
       hostname: localhost #eureka服务端的实例名称
       ip-address: 127.0.0.1
+  server:
+    enable-self-preservation: false #关闭自我保护机制 默认为true
+    eviction-interval-timer-in-ms: 2000 #清理无效节点的间隔
   client:
     #    false表示不向注册中心注册自己
     register-with-eureka: false

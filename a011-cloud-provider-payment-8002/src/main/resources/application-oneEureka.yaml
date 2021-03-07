@@ -1,4 +1,12 @@
 eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} # 主机名称修改(配置后Eureka Server处显示,不配置显示默认注册名)
+    prefer-ip-address: true # 访问路径可以显示IP地址
+    status-page-url-path: /aaa/bbb # 跳转的相对路径
+    # Eureka客户端向服务端发送心跳的时间间隔,单位为妙(默认是30s)
+    lease-renewal-interval-in-seconds: 2
+    # Eureka服务端在收到最后一次心跳后的等待时间上限,单位为秒(默认90s),超时将移除服务
+    lease-expiration-duration-in-seconds: 4
   client:
     # 表示是否将自己注册进 EurekaServer.默认为true
     register-with-eureka: true

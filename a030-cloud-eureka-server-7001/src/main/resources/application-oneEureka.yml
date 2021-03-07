@@ -3,6 +3,9 @@ eureka:
   instance:
     hostname: localhost #eureka服务端的实例名称
     ip-address: 127.0.0.1
+  server:
+    enable-self-preservation: false #关闭自我保护机制 默认为true
+    eviction-interval-timer-in-ms: 2000 #清理无效节点的间隔
   client:
     register-with-eureka: false #不向注册中心注册自己
     fetch-registry: false #false表示自己就是注册中心，我的职责就是维护服务实例，并不需要去检索服务

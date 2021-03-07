@@ -5,3 +5,5 @@ spring:
     active: manyEureka
 server:
   port: 7001
+
+
