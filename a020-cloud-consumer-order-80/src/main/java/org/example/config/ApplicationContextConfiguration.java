@@ -1,7 +1,5 @@
 package org.example.config;
 
-import com.sun.org.apache.regexp.internal.RE;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
