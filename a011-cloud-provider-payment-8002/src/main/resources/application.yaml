@@ -2,7 +2,7 @@ spring:
   application:
     name: cloud-provider-payment
   profiles:
-    active: manyEureka
+    active: oneEureka
 server:
   port: 8002
 

@@ -22,6 +22,8 @@ public class PatmentController {
     @GetMapping("get/{id}")
     public CommonResult getById(@PathVariable Long id) {
         log.info("调用查询接口");
+        // 睡眠3s 模拟处理大量业务
+        try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); }
         return new CommonResult(200, "调用查询接口成功"+"，我的端口号是："+port+",id：" + id);
     }
 
