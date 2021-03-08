@@ -21,6 +21,12 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!--spring-cloud-starter-netflix-eureka-client 中，已经默认引入了 ribbon 依赖，我们就不在需要再额外的引入它了。也可以手动来引入 Ribbon 依赖，虽然没有这个必要。-->
+        <!--手动引入ribbon依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.example.springcloud</groupId>
