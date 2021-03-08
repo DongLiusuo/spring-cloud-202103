@@ -13,6 +13,11 @@ eureka:
       #EurekaServer地址
       defaultZone: http://localhost:7001/eureka     #单机版
 
+#配置日志输出级别
+logging:
+  level:
+    org.example: debug
+
 #设置feign客户端超时时间（OpenFeign集成了Ribbon，超时由ribbon控制）
 ribbon:
   #指的是建立连接后从服务器读取到可用资源所用的时间
