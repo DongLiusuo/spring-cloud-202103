@@ -30,6 +30,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--服务的健康监控
+        该依赖一般情况是配合 spring-boot-starter-web 同时使用，
+        该模块主要用来完成对服务的健康监控。
+        在生产环境中，需要实时或定期监控服务的可用性。
+        Spring Boo t的 actuator（健康监控）功能提供了很多监控所需的接口，
+        可以对应用系统进行配置查看、相关功能统计等。
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
