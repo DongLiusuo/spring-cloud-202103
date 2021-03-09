@@ -20,7 +20,7 @@ public class PaymentController {
      * @return info
      */
     @GetMapping("ok/{id}")
-    String ok(@PathVariable("id") Integer id) {
+    public String ok(@PathVariable("id") Integer id) {
         return paymentService.ok(id);
     }
 
@@ -30,8 +30,14 @@ public class PaymentController {
      * @return 返回值
      */
     @GetMapping("timeout/{id}")
-    String timeout(@PathVariable("id") Integer id) {
+    public String timeout(@PathVariable("id") Integer id) {
         return paymentService.timeout(id);
     }
 
+
+
+    @GetMapping("paymentCircuitBreaker/{id}")
+    public String paymentCircuitBreaker(@PathVariable Integer id) {
+        return paymentService.paymentCircuitBreaker(id);
+    }
 }

@@ -4,6 +4,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -45,5 +46,37 @@ public class PaymentService {
         return "8001线程：" + Thread.currentThread().getName() + "\ttimeout方法的降级方法，方法入参：" + id;
     }
 
+    /**
+     *
+     * @HystrixProperty 的参数在HystrixCommandProperties.java中可以看到
+     * 下面配置的意思：
+     *  在10s内的10次请求失败率60%就断路
+     *  随着请求正确率的提升，服务也会逐渐恢复
+     * @param id
+     * @return
+     */
+    @HystrixCommand(
+            fallbackMethod = "paymentCircuitBreakerFallback",
+            commandProperties = {
+                    @HystrixProperty(name = "circuitBreaker.enabled", value = "true"), // 是否开启断路器
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"), //请求次数
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"), // 时间范围
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60") // 失败率达到多少后断路，此处为60%
+            }
+    )
+    public String paymentCircuitBreaker(Integer id) {
+        if (id < 0) throw new IllegalArgumentException("id不能为负数");
+        String serialNumber = UUID.randomUUID().toString();
+        return Thread.currentThread().getName() + "\t成功,流水号：" + serialNumber;
+    }
+
+    /**
+     * 降级的方法
+     * @param id
+     * @return
+     */
+    public String paymentCircuitBreakerFallback(Integer id) {
+        return "执行了降级的方法" + id;
+    }
 
 }
