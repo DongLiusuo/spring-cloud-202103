@@ -18,6 +18,7 @@
         <module>a012-cloud-provider-hystrix-payment-8001</module>
         <module>a022-cloud-consumer-feign-hystrix-order-80</module>
         <module>a050-cloud-hystrix-dashboard-9001</module>
+        <module>a060-cloud-gateway-9527</module>
     </modules>
 
     <packaging>pom</packaging>
