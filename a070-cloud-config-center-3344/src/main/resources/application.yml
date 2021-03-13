@@ -1,0 +1,21 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/DongLiusuo/spring-cloud-202103.git  #配置文件所在仓库
+          default-label: master #配置文件所在分支
+          search-paths: a075-cloud-config-file # 配置文件所在目录
+          username: DongLiusuo #登录账号
+          password: Qq535425450 #登录密码
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
