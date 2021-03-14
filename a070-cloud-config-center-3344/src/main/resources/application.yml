@@ -13,7 +13,19 @@ spring:
           search-paths: a075-cloud-config-file # 配置文件所在目录
           username: DongLiusuo #登录账号
           password: Qq535425450 #登录密码
+  #添加rabbitmq相关支持（新加）
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
 
 eureka:
   client:

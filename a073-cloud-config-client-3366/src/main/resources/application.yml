@@ -1,6 +1,5 @@
 server:
-  port: 3355
-
+  port: 3366
 #添加rabbitmq相关支持（新加）
 spring:
   rabbitmq:
@@ -14,7 +13,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"  #为什么配置 bus-refresh
+        include: "*"
 
 eureka:
   client:
