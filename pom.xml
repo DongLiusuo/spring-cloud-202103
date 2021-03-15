@@ -22,6 +22,9 @@
         <module>a070-cloud-config-center-3344</module>
         <module>a072-cloud-config-client-3355</module>
         <module>a073-cloud-config-client-3366</module>
+        <module>a080-cloud-stream-rabbitmq-provider-8801</module>
+        <module>a085-cloud-stream-rabbitmq-consumer-8802</module>
+        <module>a088-cloud-stream-rabbitmq-consumer-8803</module>
     </modules>
 
     <packaging>pom</packaging>
